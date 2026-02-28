@@ -11,13 +11,19 @@
         h1 {
             border: 5px double rgb(209, 49, 49);
             outline: 10px ridge black;
+
+            /* <colors>
+
             background-color : lightgreen;
-            /* background-color: hsla(saturation, lightness, alpha) */
-            /* border-bottom-color: rgb(255, 145, 0);  */
-        }
+            border-color: rgb(255, 145, 0);                             maximum is ( rgb(255,255,255)
+            color:#rrggbb                                               maximum is ( #ffffff)
+            background-color: hsla(hue,saturation, lightness, alpha)    maximum is( hsla(0,100%,100%)
+            
+            </colors> */
+
+            }
         #p1{
             border: 4px ridge black;
-
             height: 200px;
             width: 300px;
             /* overflow: hidden;
@@ -37,8 +43,8 @@
             font-variant: small-caps;
 
             border: 5px ridge green;
-            height: 500px;
-            width: 200px;
+            height: 50px;
+            width: 2000px;
 
             border-radius: 10px 30px 40px 50px;
             background-color: aqua;
@@ -49,9 +55,29 @@
         }
 
         #p3{
-            border: 5px ridge black;
-            height: 50;
-            width: 20;
+            /* <background>
+            
+            background-color:lightcyan;
+            background-image: url(img1.jpg);
+            background-repeat:no-repeat;               repeat; repeat-x; repeat-y;
+            background-position:bottom right;        bottom left;top left;right top ;bottom;top;left;right;
+            
+            background-attachment:local;             fixed;scroll;
+            background-origin: content-box;          padding-box ;border-box;
+            background-clip:content-box;             padding-box;border-box;
+            background-size: 500px;
+
+            </background> */
+            
+            background: lightblue url(img1.jpg) no-repeat right top ;/* short hand of background*/
+            
+            /* <border>
+            </border>         */
+            border-style:dashed dotted ;hidden;none;outset;inset;ridge;groove;double ;solid;dashed;dotted;
+            border-width: 2px 6px 18px 36px;5px 20px;thin;thick;medium;5px;
+            border-color:red green yellow pink;green;
+
+
         }
         p {
             font-family: "Playwrite CU Guides", cursive;
@@ -118,6 +144,8 @@
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt eius qui dignissimos eum quasi laborum vel
         nemo veritatis officiis doloribus reprehenderit perspiciatis, est esse perferendis praesentium quod pariatur
         delectus molestias.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quasi, error aperiam perspiciatis ducimus natus, repudiandae obcaecati, similique voluptatibus ipsam pariatur suscipit veritatis quam ipsa ab facilis quos velit sit. Voluptates alias ex eligendi aut autem ipsa dicta et distinctio voluptas, harum, magni rerum molestias ipsum laudantium excepturi enim ut!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores adipisci maiores iusto nesciunt incidunt id voluptatibus exercitationem qui illo saepe, accusamus iste corrupti expedita consectetur soluta rem, repellendus aliquid. Quae!
     </p>
 </body>
 
