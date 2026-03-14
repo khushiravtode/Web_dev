@@ -5,26 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <style>
-table,th,td{
-    border:3px solid green;
-   
+ th,td{
+    /* border:3px solid green;  */
+      border-bottom: 1px solid #ddd;   
 
+} 
+
+
+ table{
+    border:5px solid black; 
+    border-collapse:collapse; /* border ee k line ma karva */
+    border-spacing: 5px; 
+    width:500px;/* auto;50%;*/ 
+    
+} 
+/* tr:hover {background-color: coral;} */
+tr:nth-child(even) {background-color: #f2f2f2;}
+th {
+    background: green;
+  height: 70px;
+  text-align: center;
+  vertical-align: bottom;
 }
-table{
-    border:5px solid black;
-    /* border-collapse:separate;collapse;  border ee k line ma karva */
-    border-spacing: 5px;
-            width:500px;/* auto;50%;*/
+div.tablecontainer {
+  overflow-x: auto;
 }
 
-td{
+ td{
+    text-align:left;
     padding:2px;
-}
+    height:50px;
+    vertical-align:center;
+} 
 
 </style>
 </head>
 <body>
-    <table border="1">
+    <div class="tablecontainer">
+    <table >
         <thead>
             <th>name</th>
             <th>sem</th>
@@ -59,5 +77,6 @@ td{
             </tr>
         </tbody>
     </table>
+</div>
 </body>
 </html>
