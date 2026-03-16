@@ -31,7 +31,8 @@
             padding: 15px;
             margin: 15px;
             overflow: scroll;
-            background:linear-gradient(TO RIGHT,RED,PINK) ;
+            /* background:linear-gradient(TO RIGHT bottom,RED,PINK,blue,aqua) ; */
+            background: repeating-linear-gradient(to right ,red,blue 10%,yellow 20%);
             /* overflow-x:scroll ; */
         }
 
@@ -44,18 +45,24 @@
             font-variant: small-caps;
 
             border: 5px ridge green;
-            height: 50px;
+            height: 500px;
             width: 2000px;
            
             border-radius: 10px 30px 40px 50px;
-            /* background-color: aqua; */
+            background-color: aqua; 
             box-shadow: 20px 15px 10px green inset;
             /* box-shadow:20px 15px 0px green, 30px 30px 0px lightgreen, 40px 40px 0px rgb(89, 255, 89); */
             /* box-shadow:right_shadow  left_shadow bulur color  */
-
+           
         }
 
         #p3 {
+            background-image:linear-gradient(to right ,red,yellow),url(img2.jpg);
+            background-blend-mode:saturation;/*difference ;*/
+            mix-blend-mode:difference;
+            /* background:radial-gradient(closest-side at 50% 20%,red 50%,green,blue);/*farthest -side at 40% 20%,farthest-side,closest-corner
+            opacity:1;0 dekhavanu bandh 1 puru dekhay  background,text ,border badhu zakhu thay*/
+            
             /* <background>
 
             background-color:lightcyan;
@@ -69,7 +76,9 @@
             background-size: 500px;
             
             </background> */
-            background: lightblue url(img1.jpg) no-repeat right top;
+            
+            /* background: lightblue url(img1.jpg) no-repeat right top; */
+            
             /* short hand of background*/
 
 
