@@ -1,82 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<style>
- th,td{
-    /* border:3px solid green;  */
-      border-bottom: 1px solid #ddd;   
+    <style>
+        th,td {
+            /* border:3px solid green;  */
+            border-bottom: 1px solid #ddd;
+        }
 
-} 
+        table {
+            border: 5px solid black;
+            border-collapse: collapse;
+            /* border ee k line ma karva */
+            border-spacing: 5px;
+            width: 500px;
+            /* auto;50%;*/
+        }
 
+        /* tr:hover {background-color: coral;} */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
 
- table{
-    border:5px solid black; 
-    border-collapse:collapse; /* border ee k line ma karva */
-    border-spacing: 5px; 
-    width:500px;/* auto;50%;*/ 
-    
-} 
-/* tr:hover {background-color: coral;} */
-tr:nth-child(even) {background-color: #f2f2f2;}
-th {
-    background: green;
-  height: 70px;
-  text-align: center;
-  vertical-align: bottom;
-}
-div.tablecontainer {
-  overflow-x: auto;
-}
+        th {
+            background: green;
+            height: 70px;
+            text-align: center;
+            vertical-align: bottom;
+        }
 
- td{
-    text-align:left;
-    padding:2px;
-    height:50px;
-    vertical-align:center;
-} 
+        div.tablecontainer {
+            overflow-x: auto;
+        }
 
-</style>
+        td {
+            text-align: left;
+            padding: 2px;
+            height: 50px;
+            vertical-align: center;
+        }
+    </style>
 </head>
+
 <body>
     <div class="tablecontainer">
-    <table >
-        <thead>
-            <th>name</th>
-            <th>sem</th>
-            <th>year</th>
-            <th>cpi</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>khushi</td>
-                <td>4</td>
-                <td>2</td>
-                <td>9.4</td>
-            </tr>
-            <tr>
-                <td>j</td>
-                <td>3</td>
-                <td>1</td>
-                <td>56</td>
+        <table>
+            <thead>
+                <th>name</th>
+                <th>sem</th>
+                <th>year</th>
+                <th>cpi</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>khushi</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>9.4</td>
+                </tr>
+                <tr>
+                    <td>j</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>56</td>
 
-            </tr>
-            <tr>
-                <td>g</td>
-                <td>5</td>
-                <td>3</td>
-                <td>2d</td>
-            </tr>
-            <tr>
-                <td>F</td>
-                <td>3</td>
-                <td>2</td>
-                <td>53</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+                </tr>
+                <tr>
+                    <td>g</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>2d</td>
+                </tr>
+                <tr>
+                    <td>F</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>53</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
+
 </html>
