@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            border: 1px solid #fff;
+        }
+        #scoreboard {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="scoreboard">
+        <h1>Pong Game</h1>
+        <p>Player 1: <span id="player1Score">0</span> | Player 2: <span id="player2Score">0</span></p>
+    </div>
+    <canvas id="pongCanvas" width="800" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('pongCanvas');
+        const context = canvas.getContext('2d');
+
+        // Create the pong paddles and ball
+        const paddleWidth = 10, paddleHeight = 80;
+        let player1Y = canvas.height / 2 - paddleHeight / 2;
+        let player2Y = canvas.height / 2 - paddleHeight / 2;
+        let ballX = canvas.width / 2, ballY = canvas.height / 2;
+        let ballSpeedX = 5, ballSpeedY = 5;
+        let player1Score = 0, player2Score = 0;
+
+        // Draw everything
+        function draw() {
+            // Clear the canvas
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            // Draw paddles
+            context.fillStyle = '#fff';
+            context.fillRect(0, player1Y, paddleWidth, paddleHeight);
+            context.fillRect(canvas.width - paddleWidth, player2Y, paddleWidth, paddleHeight);
+            // Draw ball
+            context.beginPath();
+            context.arc(ballX, ballY, 10, 0, Math.PI * 2);
+            context.fill();
+        }
+
+        // Move the ball
+        function move() {
+            ballX += ballSpeedX;
+            ballY += ballSpeedY;
+            // Ball collision with top and bottom
+            if (ballY <= 0 || ballY >= canvas.height) {
+                ballSpeedY = -ballSpeedY;
+            }
+            // Reset ball position if it goes off the left or right side
+            if (ballX < 0) {
+                player2Score++; // Player 2 scores
+                resetBall();
+            }
+            if (ballX > canvas.width) {
+                player1Score++; // Player 1 scores
+                resetBall();
+            }
+            document.getElementById('player1Score').innerText = player1Score;
+            document.getElementById('player2Score').innerText = player2Score;
+        }
+
+        function resetBall() {
+            ballX = canvas.width / 2;
+            ballY = canvas.height / 2;
+            ballSpeedX = -ballSpeedX;
+        }
+
+        // Control the paddles
+        document.addEventListener('mousemove', (event) => {
+            const mouseY = event.clientY - canvas.getBoundingClientRect().top;
+            if (mouseY > 0 && mouseY < canvas.height - paddleHeight) {
+                player1Y = mouseY;
+            }
+        });
+
+        // Game loop
+        function gameLoop() {
+            draw();
+            move();
+            requestAnimationFrame(gameLoop);
+        }
+
+        gameLoop();
+    </script>
+</body>
+</html>
