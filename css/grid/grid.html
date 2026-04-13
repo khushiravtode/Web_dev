@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.container{
+    height:500PX;
+    width:700px;
+    background:#fff;
+    display: grid;
+    grid-template-columns: 200px auto 300px ;/*;300px 20% 100px;repeat(2,200px);*/
+    grid-gap:30px 40px; 
+    
+
+}
+.temp1{
+    background: lightcoral;
+    /* grid-row-start:2 ;
+    grid-column-start: -2; */
+/* grid-row: 2/3;
+grid-column: -2/-1; */
+grid-area: 2/-2/3/-1;
+}
+.temp2{
+    background: lightblue;
+}
+.temp3{
+    background: lightsalmon;
+}
+.temp4{
+    background: lightgreen;
+}
+.temp5{
+    background: lightslategray;
+}
+.temp6{
+    background: greenyellow;
+    
+    /* grid-row-start:1 ;
+    grid-column-start:1; */
+    grid-area: 1/1/2/2;
+}
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="temp1">1</div>
+        <div class="temp2">2</div>
+        <div class="temp3">3</div>
+        <div class="temp4">4</div>
+        <div class="temp5">5</div>
+        <div class="temp6">6</div>
+    </div>
+</body>
+</html>
