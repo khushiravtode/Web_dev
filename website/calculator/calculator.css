@@ -1,0 +1,43 @@
+
+
+body {
+    background-color: lightgray;
+    height: auto;
+    width:auto;
+    align-items: center;
+    align-content:center;
+    justify-content: center;
+}
+
+*{ justify-content: center}
+
+.calculator{
+    background: white;
+    border:3px solid black;
+    border-radius: 5px;
+    height:auto;
+    width: 200px;
+}
+
+.display{
+    background-color: lightblue;
+    border-radius: 5PX;
+    height:35px;
+    margin: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    font-style:normal;
+    color:white;
+    align-content:end;
+}
+.buttons{
+    border:2px solid black;
+    height:35px;
+    width:35px;
+    border-radius: 50%;
+    margin: 5px 5px ;
+    padding: 5px; 
+
+}
+
+
