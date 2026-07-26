@@ -1,43 +1,64 @@
 
 
 body {
-    background-color: lightgray;
-    height: auto;
-    width:auto;
-    align-items: center;
-    align-content:center;
-    justify-content: center;
+    background-color: lightsteelblue;
+    margin:auto;
+    height:fit-content;
+    width:fit-content;
+    display: flex;
+    justify-content:center;
+    align-items:center ;
+    
 }
 
-*{ justify-content: center}
-
 .calculator{
-    background: white;
-    border:3px solid black;
+    background: lightgray;
+    border:3px lightgray;
     border-radius: 5px;
     height:auto;
     width: 200px;
+    box-shadow: 15px 15px 50px;
+    padding: 5px;
 }
 
-.display{
-    background-color: lightblue;
+.display-containor{
+    background-color:lightblue;
     border-radius: 5PX;
+    border:2px solid lightblue;
     height:35px;
     margin: 5px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
     font-size: medium;
     font-style:normal;
-    color:white;
-    align-content:end;
+    color:black;
+    text-align:right;
+}
+.history{
+    opacity: 0.6;;
 }
 .buttons{
-    border:2px solid black;
+    border:1px solid whitesmoke;
     height:35px;
     width:35px;
     border-radius: 50%;
-    margin: 5px 5px ;
+    margin: 5px 5px;
     padding: 5px; 
-
+    box-shadow: -1px -1px 4px whitesmoke;
 }
 
+.buttons#AC{
+    background-color: lightpink;
+}
 
+#DEL,#but6{
+    background: lightsalmon;
+}
+#but1,#but2 ,#but3, #but4 ,#but5 {
+    background-color: lightblue;
+}
+
+#but6{
+    width:80px;
+    background: lightsalmon;
+    border-radius: 150px;
+}
