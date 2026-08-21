@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,20 +10,26 @@
   <!-- Fonts: Fraunces (display serif, used sparingly) + Inter (body/UI) + JetBrains Mono (numbers) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <!-- Toggle sits fixed, top-right, independent of card so it reads as a page-level control -->
-  <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle light / dark mode">
+  <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode"
+    title="Toggle light / dark mode">
     <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/>
-      <path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 2.8v2.4M12 18.8v2.4M4.93 4.93l1.7 1.7M17.37 17.37l1.7 1.7M2.8 12h2.4M18.8 12h2.4M4.93 19.07l1.7-1.7M17.37 6.63l1.7-1.7"/>
+      <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6" />
+      <path stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+        d="M12 2.8v2.4M12 18.8v2.4M4.93 4.93l1.7 1.7M17.37 17.37l1.7 1.7M2.8 12h2.4M18.8 12h2.4M4.93 19.07l1.7-1.7M17.37 6.63l1.7-1.7" />
     </svg>
     <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M20.2 14.6A8.6 8.6 0 1 1 9.4 3.8a7 7 0 0 0 10.8 10.8Z"/>
+      <path stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"
+        d="M20.2 14.6A8.6 8.6 0 1 1 9.4 3.8a7 7 0 0 0 10.8 10.8Z" />
     </svg>
   </button>
 
@@ -41,18 +48,11 @@
       <!-- Add task form -->
       <form id="taskForm" class="task-form" autocomplete="off">
         <label for="taskInput" class="visually-hidden">Add a new task</label>
-        <input
-          type="text"
-          id="taskInput"
-          name="taskInput"
-          class="task-input"
-          placeholder="Add an entry…"
-          maxlength="140"
-          required
-        />
+        <input type="text" id="taskInput" name="taskInput" class="task-input" placeholder="Add an entry…"
+          maxlength="140" required />
         <button type="submit" class="btn btn-add" aria-label="Add task">
           <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 5v14M5 12h14"/>
+            <path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 5v14M5 12h14" />
           </svg>
           <span>Add</span>
         </button>
@@ -104,4 +104,5 @@
 
   <script src="to-do.js"></script>
 </body>
+
 </html>

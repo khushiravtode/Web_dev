@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <style>
-.card{
-    height:400px;
-    width:400px;
-    perspective: 500px;
-}
-.content{
-    height:100%;
-    width:100%;
-    transition:transform 1s;
-    transform-style: preserve-3d;
-    position: relative;
-}
-.card:hover .content{
-transform: rotateY(180deg);
-}
-.front,.back{
-    height: 100%;
-    width:100%;
-    background: green;
-    backface-visibility:hidden;
-    position: absolute;
-}
-.back{
-    background: yellow;
-    transform: rotatey(180deg);
-}
+    .card {
+        height: 400px;
+        width: 400px;
+        perspective: 500px;
+    }
 
+    .content {
+        height: 100%;
+        width: 100%;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .card:hover .content {
+        transform: rotateY(180deg);
+    }
+
+    .front,
+    .back {
+        height: 100%;
+        width: 100%;
+        background: green;
+        backface-visibility: hidden;
+        position: absolute;
+    }
+
+    .back {
+        background: yellow;
+        transform: rotatey(180deg);
+    }
 </style>
+
 <body>
     <div class="card">
         <div class="content">
@@ -42,4 +48,5 @@ transform: rotateY(180deg);
         </div>
     </div>
 </body>
+
 </html>
