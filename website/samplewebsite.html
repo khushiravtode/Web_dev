@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +16,11 @@
             font-family: Arial, sans-serif;
             margin: 0;
         }
+
         canvas {
             border: 1px solid white;
         }
+
         #score {
             font-size: 24px;
             position: absolute;
@@ -27,104 +30,106 @@
         }
     </style>
 </head>
+
 <body>
-<div id="score"></div>
-<canvas id="pong" width="800" height="400"></canvas>
-<script>
-const canvas = document.getElementById('pong');
-const ctx = canvas.getContext('2d');
+    <div id="score"></div>
+    <canvas id="pong" width="800" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('pong');
+        const ctx = canvas.getContext('2d');
 
-const paddleWidth = 10, paddleHeight = 100, ballSize = 10;
-let leftPaddleY = (canvas.height - paddleHeight) / 2;
-let rightPaddleY = (canvas.height - paddleHeight) / 2;
-let ballX = canvas.width / 2, ballY = canvas.height / 2;
-let ballSpeedX = 5, ballSpeedY = 5;
-let leftScore = 0, rightScore = 0;
+        const paddleWidth = 10, paddleHeight = 100, ballSize = 10;
+        let leftPaddleY = (canvas.height - paddleHeight) / 2;
+        let rightPaddleY = (canvas.height - paddleHeight) / 2;
+        let ballX = canvas.width / 2, ballY = canvas.height / 2;
+        let ballSpeedX = 5, ballSpeedY = 5;
+        let leftScore = 0, rightScore = 0;
 
-function draw() {
-    // Clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Draw paddles
-    ctx.fillStyle = 'white';
-    ctx.fillRect(0, leftPaddleY, paddleWidth, paddleHeight);
-    ctx.fillRect(canvas.width - paddleWidth, rightPaddleY, paddleWidth, paddleHeight);
-    
-    // Draw ball
-    ctx.beginPath();
-    ctx.arc(ballX, ballY, ballSize, 0, Math.PI * 2);
-    ctx.fill();
-    
-    // Draw score
-    ctx.font = '24px Arial';
-    ctx.fillText(leftScore, canvas.width / 4, 30);
-    ctx.fillText(rightScore, 3 * canvas.width / 4, 30);
-}
+        function draw() {
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-function update() {
-    ballX += ballSpeedX;
-    ballY += ballSpeedY;
+            // Draw paddles
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, leftPaddleY, paddleWidth, paddleHeight);
+            ctx.fillRect(canvas.width - paddleWidth, rightPaddleY, paddleWidth, paddleHeight);
 
-    // Ball collision with top and bottom
-    if (ballY < 0 || ballY > canvas.height) {
-        ballSpeedY = -ballSpeedY;
-    }
+            // Draw ball
+            ctx.beginPath();
+            ctx.arc(ballX, ballY, ballSize, 0, Math.PI * 2);
+            ctx.fill();
 
-    // Ball collision with paddles
-    if (ballX < paddleWidth && ballY > leftPaddleY && ballY < leftPaddleY + paddleHeight) {
-        ballSpeedX = -ballSpeedX;
-    } else if (ballX > canvas.width - paddleWidth && ballY > rightPaddleY && ballY < rightPaddleY + paddleHeight) {
-        ballSpeedX = -ballSpeedX;
-    }
+            // Draw score
+            ctx.font = '24px Arial';
+            ctx.fillText(leftScore, canvas.width / 4, 30);
+            ctx.fillText(rightScore, 3 * canvas.width / 4, 30);
+        }
 
-    // Scoring
-    if (ballX < 0) {
-        rightScore++;
-        resetBall();
-    } else if (ballX > canvas.width) {
-        leftScore++;
-        resetBall();
-    }
-}
+        function update() {
+            ballX += ballSpeedX;
+            ballY += ballSpeedY;
 
-function resetBall() {
-    ballX = canvas.width / 2;
-    ballY = canvas.height / 2;
-    ballSpeedX = -ballSpeedX;
-}
+            // Ball collision with top and bottom
+            if (ballY < 0 || ballY > canvas.height) {
+                ballSpeedY = -ballSpeedY;
+            }
 
-function aiMove() {
-    if (rightPaddleY + paddleHeight / 2 < ballY) {
-        rightPaddleY += 4;
-    } else {
-        rightPaddleY -= 4;
-    }
-}
+            // Ball collision with paddles
+            if (ballX < paddleWidth && ballY > leftPaddleY && ballY < leftPaddleY + paddleHeight) {
+                ballSpeedX = -ballSpeedX;
+            } else if (ballX > canvas.width - paddleWidth && ballY > rightPaddleY && ballY < rightPaddleY + paddleHeight) {
+                ballSpeedX = -ballSpeedX;
+            }
 
-function mouseMove(event) {
-    const mouseY = event.clientY - canvas.getBoundingClientRect().top;
-    leftPaddleY = mouseY - paddleHeight / 2;
-}
+            // Scoring
+            if (ballX < 0) {
+                rightScore++;
+                resetBall();
+            } else if (ballX > canvas.width) {
+                leftScore++;
+                resetBall();
+            }
+        }
 
-function keyDown(event) {
-    if (event.key === 'ArrowUp') {
-        leftPaddleY -= 20;
-    } else if (event.key === 'ArrowDown') {
-        leftPaddleY += 20;
-    }
-}
+        function resetBall() {
+            ballX = canvas.width / 2;
+            ballY = canvas.height / 2;
+            ballSpeedX = -ballSpeedX;
+        }
 
-canvas.addEventListener('mousemove', mouseMove);
-window.addEventListener('keydown', keyDown);
+        function aiMove() {
+            if (rightPaddleY + paddleHeight / 2 < ballY) {
+                rightPaddleY += 4;
+            } else {
+                rightPaddleY -= 4;
+            }
+        }
 
-function gameLoop() {
-    draw();
-    update();
-    aiMove();
-    requestAnimationFrame(gameLoop);
-}
+        function mouseMove(event) {
+            const mouseY = event.clientY - canvas.getBoundingClientRect().top;
+            leftPaddleY = mouseY - paddleHeight / 2;
+        }
 
-gameLoop();
-</script>
+        function keyDown(event) {
+            if (event.key === 'ArrowUp') {
+                leftPaddleY -= 20;
+            } else if (event.key === 'ArrowDown') {
+                leftPaddleY += 20;
+            }
+        }
+
+        canvas.addEventListener('mousemove', mouseMove);
+        window.addEventListener('keydown', keyDown);
+
+        function gameLoop() {
+            draw();
+            update();
+            aiMove();
+            requestAnimationFrame(gameLoop);
+        }
+
+        gameLoop();
+    </script>
 </body>
+
 </html>
