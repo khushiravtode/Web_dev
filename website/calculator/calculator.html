@@ -6,48 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
     <link rel="stylesheet" href="calculator.css">
-    <script src="calculator.js"></script>
+    <script src="calculator.js" defer></script>        <!--defr imp-->
 </head>
 
 <body>
     <div class="calculator">
-
         <div class="display-containor">
-
-            <div class="history"> dhfdgc </div>
+            <div class="history"> </div>
             <div class="display">0</div>
-
         </div>
-
         <div class="button">
             <div class="class1">
-                <button id="AC" class="buttons">AC</button>
-                <button id="DEL" class="buttons">DEL</button>
-                <button id="but1" class="buttons">%</button>
-                <button id="but2" class="buttons">/</button>
+                <button id="AC" class="buttons" onclick="clearDisplay()">AC</button>
+                <button id="DEL" class="buttons" onclick="deleteLast()">DEL</button>
+                <button id="but1" class="buttons" onclick="appendOperator('%')">%</button>
+                <button id="but2" class="buttons" onclick="appendOperator('/')"> / </button>
             </div>
-            <div class="2">
-                <button id="7" class="buttons">7</button>
-                <button id="8" class="buttons">8</button>
-                <button id="9" class="buttons">9</button>
-                <button id="but3" class="buttons">*</button>
+                <div class=" 2">
+                    <button id="7" class="buttons" onclick="appendNumber('7')">7</button>
+                    <button id="8" class="buttons" onclick="appendNumber('8')">8</button>
+                    <button id="9" class="buttons" onclick="appendNumber('9')">9</button>
+                    <button id="but3" class="buttons" onclick="appendOperator('*')">*</button>
             </div>
             <div class="3">
-                <button id="4" class="buttons">4</button>
-                <button id="5" class="buttons">5</button>
-                <button id="6" class="buttons">6</button>
-                <button id="but4" class="buttons">-</button>
+                <button id="4" class="buttons" onclick="appendNumber('4')">4</button>
+                <button id="5" class="buttons" onclick="appendNumber('5')">5</button>
+                <button id="6" class="buttons" onclick="appendNumber('6')">6</button>
+                <button id="but4" class="buttons" onclick="appendOperator('-')">-</button>
             </div>
             <div class="4">
-                <button id="1" class="buttons">1</button>
-                <button id="2" class="buttons">2</button>
-                <button id="3" class="buttons">3</button>
-                <button id="but5" class="buttons">+</button>
+                <button id="1" class="buttons" onclick="appendNumber('1')">1</button>
+                <button id="2" class="buttons" onclick="appendNumber('2')">2</button>
+                <button id="3" class="buttons" onclick="appendNumber('3')">3</button>
+                <button id="but5" class="buttons" onclick="appendOperator('+')">+</button>
             </div>
             <div class="5">
-                <button id="." class="buttons">.</button>
-                <button id="0" class="buttons">0</button>
-                <button id="but6" class="buttons">=</button>
+                <button id="." class="buttons" onclick="appendDecimal()">.</button>
+                <button id="0" class="buttons" onclick="appendNumber('0')">0</button>
+                <button id="but6" class="buttons" onclick="calculate()">=</button>
             </div>
 
         </div>
