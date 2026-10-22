@@ -1,8 +1,0 @@
-int main()
-{
-    int a;
-    float marks;
-    a = 10;
-    marks = 85.5;
-    return 0;
-}
